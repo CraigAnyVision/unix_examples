@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.9)
+project(04_files_and_dirs C)
+
+set(CMAKE_C_STANDARD 99)
+
+add_executable(access access.c)
+add_executable(cdpwd cdpwd.c path_alloc.h)
+add_executable(changemod changemod.c)
+add_executable(devrdev devrdev.c)
+add_executable(filetype filetype.c)
+add_executable(ftw8 ftw8.c)
+add_executable(mycd mycd.c)
+add_executable(umask umask.c)
+add_executable(unlink unlink.c)
+add_executable(zap zap.c)

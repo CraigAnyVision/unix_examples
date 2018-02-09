@@ -8,13 +8,13 @@ int main (int argc, char *argv[])
 
     if (argc != 2)
     {
-        fprintf(stderr, "usage: a.out <descriptor#>");
+        fprintf(stderr, "usage: a.out <descriptor#>\n");
         exit(1);
     }
 
     if ((val = fcntl(atoi(argv[1]), F_GETFL, 0)) < 0)
     {
-        fprintf(stderr, "fcntl error for fd %d", atoi(argv[1]));
+        fprintf(stderr, "fcntl error for fd %d\n", atoi(argv[1]));
         exit(1);
     }
 
