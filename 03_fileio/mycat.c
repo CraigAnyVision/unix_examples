@@ -22,14 +22,14 @@ int main (void)
     {
         if (write(STDOUT_FILENO, buf, (size_t) n) != n)
         {
-            fprintf(stderr, "write error");
-            exit(1);
+            fprintf(stderr, "write error\n");
+            exit(EXIT_FAILURE);
         }
     }
 
     if (n < 0)
     {
-        fprintf(stderr, "read error");
-        exit(1);
+        fprintf(stderr, "read error\n");
+        exit(EXIT_FAILURE);
     }
 }

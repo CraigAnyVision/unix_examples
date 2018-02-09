@@ -4,6 +4,7 @@
 
 #define BUFF_SIZE 4096
 
+// Usage: ./mycat < infile > outfile
 int main (void)
 {
     ssize_t n = 0;

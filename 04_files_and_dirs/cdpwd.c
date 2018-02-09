@@ -1,6 +1,6 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 
 #include "path_alloc.h"
 
@@ -12,7 +12,7 @@ int main (void)
     if (chdir("/usr/spool/uucppublic") < 0)
     {
         fprintf(stderr, "chdir failed\n");
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     ptr = path_alloc(&size);
@@ -23,5 +23,4 @@ int main (void)
     }
 
     printf("cwd = %s\n", ptr);
-    exit(0);
 }

@@ -5,8 +5,8 @@ int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
-        fprintf(stderr, "usage: a.out <dirname>");
-        exit(1);
+		fprintf(stderr, "usage: %s <dirname>\n", argv[0]);
+		exit(EXIT_FAILURE);
     }
 
 #ifdef _POSIX_ADVISORY_INFO
@@ -647,5 +647,5 @@ int main(int argc, char *argv[])
 	printf("no symbol for _POSIX2_SYMLINKS\n");
 #endif
 	printf("\n");
-	exit(0);
+	exit(EXIT_SUCCESS);
 }

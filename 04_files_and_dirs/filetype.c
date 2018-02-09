@@ -1,6 +1,6 @@
-#include <sys/stat.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 
 int main (int argc, char *argv[])
 {
@@ -10,9 +10,11 @@ int main (int argc, char *argv[])
     for (int i = 1; i < argc; i++)
     {
         printf("%s: ", argv[i]);
+
+        // lstat doesn't follow links
         if (lstat(argv[i], &buf) < 0)
         {
-            fprintf(stderr, "lstat error\n");
+            printf("lstat error\n");
             continue;
         }
 

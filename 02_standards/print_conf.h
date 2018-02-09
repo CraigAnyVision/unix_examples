@@ -2,7 +2,7 @@
 
 #include <errno.h>
 #include <stdio.h>
-#include <zconf.h>
+#include <unistd.h>
 
 static void print_sysconf (char *mesg, int name)
 {

@@ -11,12 +11,19 @@ int main (void)
     char buf[MAX_LINE_LENGTH];
 
     printf("%% ");
+
     while (fgets(buf, MAX_LINE_LENGTH, stdin) != NULL)
     {
         if (buf[strlen(buf) - 1] == '\n')
         {
             // replace newline with null
             buf[strlen(buf) - 1] = 0;
+        }
+
+        if (buf[0] == 0)
+        {
+            printf("%% ");
+            continue;
         }
 
         pid_t pid = fork();

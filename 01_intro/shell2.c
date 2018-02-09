@@ -24,12 +24,19 @@ int main (void)
     {
         if (buf[strlen(buf) - 1] == '\n')
         {
+            // replace newline with null
             buf[strlen(buf) - 1] = 0;
         }
 
-        pid_t pid;
+        if (buf[0] == 0)
+        {
+            printf("%% ");
+            continue;
+        }
 
-        if ((pid = fork()) < 0)
+        pid_t pid = fork();
+
+        if (pid < 0)
         {
             printf("fork error");
             exit(EXIT_FAILURE);
@@ -38,7 +45,8 @@ int main (void)
         {
             // child
             execlp(buf, buf, (char *) 0);
-            printf("couldn't execute: %s", buf);
+            printf("couldn't execute: %s\n", buf);
+            // 127: command not found
             exit(127);
         }
 

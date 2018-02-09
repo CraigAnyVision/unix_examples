@@ -6,8 +6,8 @@ int main (int argc, char *argv[])
 {
     if (argc != 2)
     {
-        fprintf(stderr, "usage: a.out <dirname>");
-        exit(1);
+        fprintf(stderr, "usage: %s <dirname>\n", argv[0]);
+        exit(EXIT_FAILURE);
     }
 
 #ifdef ARG_MAX
@@ -350,5 +350,5 @@ int main (int argc, char *argv[])
 #else
     printf("no symbol for _PC_TIMESTAMP_RESOLUTION\n");
 #endif
-    exit(0);
+    exit(EXIT_SUCCESS);
 }

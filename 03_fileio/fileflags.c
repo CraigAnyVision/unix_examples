@@ -2,20 +2,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+// Usage:
+//    ./fileflags 0 < /dev/tty
+//         read only
+//    ./fileflags 1 > temp.foo && cat temp.foo
+//         write only
+//    ./fileflags 2 2>>temp.foo
+//         write only, append
+//    ./fileflags 5 5<>temp.foo
+//         read write
 int main (int argc, char *argv[])
 {
     int val;
 
     if (argc != 2)
     {
-        fprintf(stderr, "usage: a.out <descriptor#>\n");
-        exit(1);
+        fprintf(stderr, "usage: %s <descriptor#>\n", argv[0]);
+        exit(EXIT_FAILURE);
     }
 
     if ((val = fcntl(atoi(argv[1]), F_GETFL, 0)) < 0)
     {
         fprintf(stderr, "fcntl error for fd %d\n", atoi(argv[1]));
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     switch (val & O_ACCMODE)
@@ -33,8 +43,7 @@ int main (int argc, char *argv[])
             break;
 
         default:
-            fprintf(stderr, "unknown access mode");
-            exit(1);
+            printf("unknown access mode");
     }
 
     if (val & O_APPEND)
@@ -50,5 +59,5 @@ int main (int argc, char *argv[])
 #endif
 
     putchar('\n');
-    exit(0);
+    exit(EXIT_SUCCESS);
 }
