@@ -1,7 +1,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <sys/stat.h>
 
 int main (int argc, char *argv[])
@@ -18,6 +17,7 @@ int main (int argc, char *argv[])
             fprintf(stderr, "%s: stat error\n", argv[i]);
             continue;
         }
+
         if ((fd = open(argv[i], O_RDWR | O_TRUNC)) < 0)
         {
             // truncate
@@ -25,8 +25,9 @@ int main (int argc, char *argv[])
             continue;
         }
 
-        times[0] = statbuf.st_atim;
-        times[1] = statbuf.st_mtim;
+        times[0] = statbuf.st_atim;  // access time
+        times[1] = statbuf.st_mtim;  // modification time
+
         if (futimens(fd, times) < 0)
         {
             // reset times
@@ -35,6 +36,4 @@ int main (int argc, char *argv[])
 
         close(fd);
     }
-
-    exit(0);
 }
