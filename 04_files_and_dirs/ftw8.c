@@ -7,13 +7,13 @@
 #include "path_alloc.h"
 
 // function type that is called for each filename
-typedef int Myfunc (const char *, const struct stat *, int);
+typedef int MyFunc (const char *, const struct stat *, int);
 
-static Myfunc myfunc;
+static MyFunc file_counter;
 
-static int myftw (char *, Myfunc *);
+static int my_ftw (char *, MyFunc *);
 
-static int dopath (Myfunc *);
+static int process_path (MyFunc *);
 
 static long nreg, ndir, nblk, nchr, nfifo, nslink, nsock, ntot;
 
@@ -24,7 +24,7 @@ int main (int argc, char *argv[])
         fprintf(stderr, "usage:  ftw  <starting-pathname>\n");
     }
 
-    int ret = myftw(argv[1], myfunc);
+    int ret = my_ftw(argv[1], file_counter);
 
     ntot = nreg + ndir + nblk + nchr + nfifo + nslink + nsock;
 
@@ -46,7 +46,7 @@ int main (int argc, char *argv[])
 }
 
 /*
- * Descend through the hierarchy, starting at "pathname".
+ * Descend through the hierarchy, starting at "path_name".
  * The caller's func() is called for every file.
  */
 #define    FTW_F    1      // file other than directory
@@ -55,68 +55,71 @@ int main (int argc, char *argv[])
 #define    FTW_NS   4      // file that we can't stat
 
 // contains full pathname for every file
-static char *fullpath;
-static size_t pathlen;
+static char *full_path;
+static size_t path_len;
 
 // we return whatever func() returns
-static int myftw (char *pathname, Myfunc *func)
+static int my_ftw (char *path_name, MyFunc *func)
 {
     // malloc PATH_MAX+1 bytes
-    fullpath = path_alloc(&pathlen);
-    // ({Prog pathalloc})
-    if (pathlen <= strlen(pathname))
+    full_path = path_alloc(&path_len);
+
+    if (path_len <= strlen(path_name))
     {
-        pathlen = strlen(pathname) * 2;
-        if ((fullpath = realloc(fullpath, pathlen)) == NULL)
+        path_len = strlen(path_name) * 2;
+        if ((full_path = realloc(full_path, path_len)) == NULL)
         {
             fprintf(stderr, "realloc failed\n");
         }
     }
-    strcpy(fullpath, pathname);
-    return (dopath(func));
+    strcpy(full_path, path_name);
+    return (process_path(func));
 }
 
 /*
- * Descend through the hierarchy, starting at "fullpath".
+ * Descend through the hierarchy, starting at "full_path".
  * If "fullpath" is anything other than a directory, we lstat() it,
  * call func(), and return.  For a directory, we call ourself
  * recursively for each name in the directory.
+ * we return whatever func() returns
  */
-// we return whatever func() returns
-static int dopath (Myfunc *func)
+static int process_path (MyFunc *func)
 {
-    struct stat statbuf;
+    struct stat stat_buf;
     struct dirent *dirp;
     DIR *dp;
     int ret, n;
 
-    if (lstat(fullpath, &statbuf) < 0)    /* stat error */
-        return (func(fullpath, &statbuf, FTW_NS));
-    if (S_ISDIR(statbuf.st_mode) == 0)    /* not a directory */
-        return (func(fullpath, &statbuf, FTW_F));
+    // stat error
+    if (lstat(full_path, &stat_buf) < 0)
+        return (func(full_path, &stat_buf, FTW_NS));
+
+    // not a directory
+    if (S_ISDIR(stat_buf.st_mode) == 0)
+        return (func(full_path, &stat_buf, FTW_F));
 
     /*
      * It's a directory.  First call func() for the directory,
-     * then process each filename in the directory.
+     * then process each filename in the directory
      */
-    if ((ret = func(fullpath, &statbuf, FTW_D)) != 0)
+    if ((ret = func(full_path, &stat_buf, FTW_D)) != 0)
         return (ret);
 
-    n = strlen(fullpath);
-    if (n + NAME_MAX + 2 > pathlen)
+    n = (int) strlen(full_path);
+    if (n + NAME_MAX + 2 > path_len)
     {    // expand path buffer
-        pathlen *= 2;
-        if ((fullpath = realloc(fullpath, pathlen)) == NULL)
+        path_len *= 2;
+        if ((full_path = realloc(full_path, path_len)) == NULL)
             fprintf(stderr, "realloc failed\n");
     }
 
-    fullpath[n++] = '/';
-    fullpath[n] = 0;
+    full_path[n++] = '/';
+    full_path[n] = 0;
 
-    if ((dp = opendir(fullpath)) == NULL)
+    if ((dp = opendir(full_path)) == NULL)
     {
         // can't read directory
-        return (func(fullpath, &statbuf, FTW_DNR));
+        return (func(full_path, &stat_buf, FTW_DNR));
     }
 
     while ((dirp = readdir(dp)) != NULL)
@@ -128,10 +131,10 @@ static int dopath (Myfunc *func)
         }
 
         // append name after "/"
-        strcpy(&fullpath[n], dirp->d_name);
+        strcpy(&full_path[n], dirp->d_name);
 
         // recursive
-        if ((ret = dopath(func)) != 0)
+        if ((ret = process_path(func)) != 0)
         {
             // time to leave
             break;
@@ -139,16 +142,16 @@ static int dopath (Myfunc *func)
     }
 
     // erase everything from slash onward
-    fullpath[n - 1] = 0;
+    full_path[n - 1] = 0;
 
     if (closedir(dp) < 0)
     {
-        fprintf(stderr, "can't close directory %s\n", fullpath);
+        fprintf(stderr, "can't close directory %s\n", full_path);
     }
     return (ret);
 }
 
-static int myfunc (const char *pathname, const struct stat *statptr, int type)
+static int file_counter (const char *pathname, const struct stat *statptr, int type)
 {
     switch (type)
     {
@@ -176,6 +179,9 @@ static int myfunc (const char *pathname, const struct stat *statptr, int type)
                 case S_IFDIR:
                     // directories should have type = FTW_D
                     fprintf(stderr, "for S_IFDIR for %s\n", pathname);
+                    exit(1);
+                default:
+                    fprintf(stderr, "unrecognized file type %d\n", statptr->st_mode);
                     exit(1);
             }
             break;
