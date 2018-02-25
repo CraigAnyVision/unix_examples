@@ -9,7 +9,7 @@ int main (void)
     char *ptr;
     size_t size;
 
-    if (chdir("/usr/spool/uucppublic") < 0)
+    if (chdir("/proc/thread-self/fd") < 0)
     {
         fprintf(stderr, "chdir failed\n");
         exit(EXIT_FAILURE);
