@@ -18,16 +18,16 @@ static char *page_end =
 " </body>\n"
 "</html>\n";
 
-// HTML source for the page indicating there was a problem opening /proc/issue
+// HTML source for the page indicating there was a problem opening /etc/issue
 static char *error_page =
 "<html>\n"
 " <body>\n"
-"  <p> Error: Could not open /proc/issue.</p>\n"
+"  <p> Error: Could not open /etc/issue.</p>\n"
 " </body>\n"
 "</html>\n";
 
 // HTML source indicating an error
-static char *error_message = "Error reading /proc/issue.";
+static char *error_message = "Error reading /etc/issue.";
 
 void module_generate(int fd)
 {
@@ -35,7 +35,7 @@ void module_generate(int fd)
     int rval;
 
     // Open /etc/issue
-    int input_fd = open("/etc / issue", O_RDONLY);
+    int input_fd = open("/etc/issue", O_RDONLY);
     if (input_fd == -1)
         system_error("open");
 
@@ -52,12 +52,12 @@ void module_generate(int fd)
         write(fd, page_start, strlen(page_start));
 
         off_t offset = 0;
-        // Copy from /proc/issue to the client socket.
+        // Copy from /etc/issue to the client socket.
         rval = sendfile(fd, input_fd, &offset, file_info.st_size);
 
         if (rval == -1)
         {
-            // Something went wrong sending the contents of /proc/issue. Write an error message.
+            // Something went wrong sending the contents of /etc/issue. Write an error message.
             write(fd, error_message, strlen(error_message));
         }
 
