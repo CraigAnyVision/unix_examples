@@ -1,0 +1,9 @@
+﻿---
+BasedOnStyle: Mozilla
+AlignEscapedNewlinesLeft: 'true'
+SortIncludes: 'true'
+Standard: Auto
+TabWidth: '4'
+UseTab: ForIndentation
+
+...
