@@ -1,5 +1,0 @@
-simpleQt
-.qmake.stash
-*.o
-Makefile
-build/
