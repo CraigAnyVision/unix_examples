@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int main (void)
+int main(void)
 {
-    printf("uid = %d, gid = %d\n", getuid(), getgid());
+	printf("uid = %d, gid = %d\n", getuid(), getgid());
 }

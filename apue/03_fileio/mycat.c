@@ -8,28 +8,28 @@
 
 // Use:
 //    ./mycat < infile > outfile
-int main (void)
+int main(void)
 {
-    // turn on sync write flag
-    // this causes each write to wait for data to be written to disc before returning
-    // normally a write only queues the data for writing
-    set_flags(STDOUT_FILENO, O_SYNC);
+	// turn on sync write flag
+	// this causes each write to wait for data to be written to disc before returning
+	// normally a write only queues the data for writing
+	set_flags(STDOUT_FILENO, O_SYNC);
 
-    int n;
-    char buf[BUFF_SIZE];
+	int n;
+	char buf[BUFF_SIZE];
 
-    while ((n = read(STDIN_FILENO, buf, BUFF_SIZE)) > 0)
-    {
-        if (write(STDOUT_FILENO, buf, (size_t) n) != n)
-        {
-            fprintf(stderr, "write error\n");
-            exit(EXIT_FAILURE);
-        }
-    }
+	while ((n = read(STDIN_FILENO, buf, BUFF_SIZE)) > 0)
+	{
+		if (write(STDOUT_FILENO, buf, (size_t)n) != n)
+		{
+			fprintf(stderr, "write error\n");
+			exit(EXIT_FAILURE);
+		}
+	}
 
-    if (n < 0)
-    {
-        fprintf(stderr, "read error\n");
-        exit(EXIT_FAILURE);
-    }
+	if (n < 0)
+	{
+		fprintf(stderr, "read error\n");
+		exit(EXIT_FAILURE);
+	}
 }

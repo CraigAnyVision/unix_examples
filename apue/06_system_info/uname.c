@@ -17,7 +17,7 @@ int main(void)
 	printf("release:         %s\n", utn.release);
 	printf("version:         %s\n", utn.version);
 	printf("machine:         %s\n", utn.machine);
-	//printf("domainname:    %s\n", utn.domainname); not available in Ubuntu
+	// printf("domainname:    %s\n", utn.domainname); not available in Ubuntu
 
 	// version of the ISO POSIX-1 standard (C language binding)
 	printf("POSIX.1 Ver:     %ld\n", _POSIX_VERSION);

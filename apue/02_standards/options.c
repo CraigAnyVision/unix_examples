@@ -7,10 +7,10 @@ int main(int argc, char *argv[])
 	{
 		fprintf(stderr, "usage: %s <dirname>\n", argv[0]);
 		exit(EXIT_FAILURE);
-    }
+	}
 
 #ifdef _POSIX_ADVISORY_INFO
-	printf("_POSIX_ADVISORY_INFO is defined (val is %ld)\n", (long)_POSIX_ADVISORY_INFO+0);
+	printf("_POSIX_ADVISORY_INFO is defined (val is %ld)\n", (long)_POSIX_ADVISORY_INFO + 0);
 #else
 	printf("_POSIX_ADVISORY_INFO is undefined\n");
 #endif
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_ASYNCHRONOUS_IO
-	printf("_POSIX_ASYNCHRONOUS_IO is defined (val is %ld)\n", (long)_POSIX_ASYNCHRONOUS_IO+0);
+	printf("_POSIX_ASYNCHRONOUS_IO is defined (val is %ld)\n", (long)_POSIX_ASYNCHRONOUS_IO + 0);
 #else
 	printf("_POSIX_ASYNCHRONOUS_IO is undefined\n");
 #endif
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_BARRIERS
-	printf("_POSIX_BARRIERS is defined (val is %ld)\n", (long)_POSIX_BARRIERS+0);
+	printf("_POSIX_BARRIERS is defined (val is %ld)\n", (long)_POSIX_BARRIERS + 0);
 #else
 	printf("_POSIX_BARRIERS is undefined\n");
 #endif
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_CLOCK_SELECTION
-	printf("_POSIX_CLOCK_SELECTION is defined (val is %ld)\n", (long)_POSIX_CLOCK_SELECTION+0);
+	printf("_POSIX_CLOCK_SELECTION is defined (val is %ld)\n", (long)_POSIX_CLOCK_SELECTION + 0);
 #else
 	printf("_POSIX_CLOCK_SELECTION is undefined\n");
 #endif
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_CPUTIME
-	printf("_POSIX_CPUTIME is defined (val is %ld)\n", (long)_POSIX_CPUTIME+0);
+	printf("_POSIX_CPUTIME is defined (val is %ld)\n", (long)_POSIX_CPUTIME + 0);
 #else
 	printf("_POSIX_CPUTIME is undefined\n");
 #endif
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_FSYNC
-	printf("_POSIX_FSYNC is defined (val is %ld)\n", (long)_POSIX_FSYNC+0);
+	printf("_POSIX_FSYNC is defined (val is %ld)\n", (long)_POSIX_FSYNC + 0);
 #else
 	printf("_POSIX_FSYNC is undefined\n");
 #endif
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_IPV6
-	printf("_POSIX_IPV6 is defined (val is %ld)\n", (long)_POSIX_IPV6+0);
+	printf("_POSIX_IPV6 is defined (val is %ld)\n", (long)_POSIX_IPV6 + 0);
 #else
 	printf("_POSIX_IPV6 is undefined\n");
 #endif
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_JOB_CONTROL
-	printf("_POSIX_JOB_CONTROL is defined (val is %ld)\n", (long)_POSIX_JOB_CONTROL+0);
+	printf("_POSIX_JOB_CONTROL is defined (val is %ld)\n", (long)_POSIX_JOB_CONTROL + 0);
 #else
 	printf("_POSIX_JOB_CONTROL is undefined\n");
 #endif
@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_MAPPED_FILES
-	printf("_POSIX_MAPPED_FILES is defined (val is %ld)\n", (long)_POSIX_MAPPED_FILES+0);
+	printf("_POSIX_MAPPED_FILES is defined (val is %ld)\n", (long)_POSIX_MAPPED_FILES + 0);
 #else
 	printf("_POSIX_MAPPED_FILES is undefined\n");
 #endif
@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_MEMLOCK
-	printf("_POSIX_MEMLOCK is defined (val is %ld)\n", (long)_POSIX_MEMLOCK+0);
+	printf("_POSIX_MEMLOCK is defined (val is %ld)\n", (long)_POSIX_MEMLOCK + 0);
 #else
 	printf("_POSIX_MEMLOCK is undefined\n");
 #endif
@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_MEMLOCK_RANGE
-	printf("_POSIX_MEMLOCK_RANGE is defined (val is %ld)\n", (long)_POSIX_MEMLOCK_RANGE+0);
+	printf("_POSIX_MEMLOCK_RANGE is defined (val is %ld)\n", (long)_POSIX_MEMLOCK_RANGE + 0);
 #else
 	printf("_POSIX_MEMLOCK_RANGE is undefined\n");
 #endif
@@ -131,7 +131,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_MEMORY_PROTECTION
-	printf("_POSIX_MEMORY_PROTECTION is defined (val is %ld)\n", (long)_POSIX_MEMORY_PROTECTION+0);
+	printf("_POSIX_MEMORY_PROTECTION is defined (val is %ld)\n", (long)_POSIX_MEMORY_PROTECTION + 0);
 #else
 	printf("_POSIX_MEMORY_PROTECTION is undefined\n");
 #endif
@@ -142,7 +142,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_MESSAGE_PASSING
-	printf("_POSIX_MESSAGE_PASSING is defined (val is %ld)\n", (long)_POSIX_MESSAGE_PASSING+0);
+	printf("_POSIX_MESSAGE_PASSING is defined (val is %ld)\n", (long)_POSIX_MESSAGE_PASSING + 0);
 #else
 	printf("_POSIX_MESSAGE_PASSING is undefined\n");
 #endif
@@ -153,7 +153,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_MONOTONIC_CLOCK
-	printf("_POSIX_MONOTONIC_CLOCK is defined (val is %ld)\n", (long)_POSIX_MONOTONIC_CLOCK+0);
+	printf("_POSIX_MONOTONIC_CLOCK is defined (val is %ld)\n", (long)_POSIX_MONOTONIC_CLOCK + 0);
 #else
 	printf("_POSIX_MONOTONIC_CLOCK is undefined\n");
 #endif
@@ -164,7 +164,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_PRIORITIZED_IO
-	printf("_POSIX_PRIORITIZED_IO is defined (val is %ld)\n", (long)_POSIX_PRIORITIZED_IO+0);
+	printf("_POSIX_PRIORITIZED_IO is defined (val is %ld)\n", (long)_POSIX_PRIORITIZED_IO + 0);
 #else
 	printf("_POSIX_PRIORITIZED_IO is undefined\n");
 #endif
@@ -175,7 +175,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_PRIORITY_SCHEDULING
-	printf("_POSIX_PRIORITY_SCHEDULING is defined (val is %ld)\n", (long)_POSIX_PRIORITY_SCHEDULING+0);
+	printf("_POSIX_PRIORITY_SCHEDULING is defined (val is %ld)\n", (long)_POSIX_PRIORITY_SCHEDULING + 0);
 #else
 	printf("_POSIX_PRIORITY_SCHEDULING is undefined\n");
 #endif
@@ -186,7 +186,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_RAW_SOCKETS
-	printf("_POSIX_RAW_SOCKETS is defined (val is %ld)\n", (long)_POSIX_RAW_SOCKETS+0);
+	printf("_POSIX_RAW_SOCKETS is defined (val is %ld)\n", (long)_POSIX_RAW_SOCKETS + 0);
 #else
 	printf("_POSIX_RAW_SOCKETS is undefined\n");
 #endif
@@ -197,7 +197,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_READER_WRITER_LOCKS
-	printf("_POSIX_READER_WRITER_LOCKS is defined (val is %ld)\n", (long)_POSIX_READER_WRITER_LOCKS+0);
+	printf("_POSIX_READER_WRITER_LOCKS is defined (val is %ld)\n", (long)_POSIX_READER_WRITER_LOCKS + 0);
 #else
 	printf("_POSIX_READER_WRITER_LOCKS is undefined\n");
 #endif
@@ -208,7 +208,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_REALTIME_SIGNALS
-	printf("_POSIX_REALTIME_SIGNALS is defined (val is %ld)\n", (long)_POSIX_REALTIME_SIGNALS+0);
+	printf("_POSIX_REALTIME_SIGNALS is defined (val is %ld)\n", (long)_POSIX_REALTIME_SIGNALS + 0);
 #else
 	printf("_POSIX_REALTIME_SIGNALS is undefined\n");
 #endif
@@ -219,7 +219,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_REGEXP
-	printf("_POSIX_REGEXP is defined (val is %ld)\n", (long)_POSIX_REGEXP+0);
+	printf("_POSIX_REGEXP is defined (val is %ld)\n", (long)_POSIX_REGEXP + 0);
 #else
 	printf("_POSIX_REGEXP is undefined\n");
 #endif
@@ -230,7 +230,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_SAVED_IDS
-	printf("_POSIX_SAVED_IDS is defined (val is %ld)\n", (long)_POSIX_SAVED_IDS+0);
+	printf("_POSIX_SAVED_IDS is defined (val is %ld)\n", (long)_POSIX_SAVED_IDS + 0);
 #else
 	printf("_POSIX_SAVED_IDS is undefined\n");
 #endif
@@ -241,7 +241,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_SEMAPHORES
-	printf("_POSIX_SEMAPHORES is defined (val is %ld)\n", (long)_POSIX_SEMAPHORES+0);
+	printf("_POSIX_SEMAPHORES is defined (val is %ld)\n", (long)_POSIX_SEMAPHORES + 0);
 #else
 	printf("_POSIX_SEMAPHORES is undefined\n");
 #endif
@@ -252,7 +252,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_SHARED_MEMORY_OBJECTS
-	printf("_POSIX_SHARED_MEMORY_OBJECTS is defined (val is %ld)\n", (long)_POSIX_SHARED_MEMORY_OBJECTS+0);
+	printf("_POSIX_SHARED_MEMORY_OBJECTS is defined (val is %ld)\n", (long)_POSIX_SHARED_MEMORY_OBJECTS + 0);
 #else
 	printf("_POSIX_SHARED_MEMORY_OBJECTS is undefined\n");
 #endif
@@ -263,7 +263,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_SHELL
-	printf("_POSIX_SHELL is defined (val is %ld)\n", (long)_POSIX_SHELL+0);
+	printf("_POSIX_SHELL is defined (val is %ld)\n", (long)_POSIX_SHELL + 0);
 #else
 	printf("_POSIX_SHELL is undefined\n");
 #endif
@@ -274,7 +274,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_SPAWN
-	printf("_POSIX_SPAWN is defined (val is %ld)\n", (long)_POSIX_SPAWN+0);
+	printf("_POSIX_SPAWN is defined (val is %ld)\n", (long)_POSIX_SPAWN + 0);
 #else
 	printf("_POSIX_SPAWN is undefined\n");
 #endif
@@ -285,7 +285,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_SPIN_LOCKS
-	printf("_POSIX_SPIN_LOCKS is defined (val is %ld)\n", (long)_POSIX_SPIN_LOCKS+0);
+	printf("_POSIX_SPIN_LOCKS is defined (val is %ld)\n", (long)_POSIX_SPIN_LOCKS + 0);
 #else
 	printf("_POSIX_SPIN_LOCKS is undefined\n");
 #endif
@@ -296,7 +296,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_SPORADIC_SERVER
-	printf("_POSIX_SPORADIC_SERVER is defined (val is %ld)\n", (long)_POSIX_SPORADIC_SERVER+0);
+	printf("_POSIX_SPORADIC_SERVER is defined (val is %ld)\n", (long)_POSIX_SPORADIC_SERVER + 0);
 #else
 	printf("_POSIX_SPORADIC_SERVER is undefined\n");
 #endif
@@ -307,7 +307,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_SYNCHRONIZED_IO
-	printf("_POSIX_SYNCHRONIZED_IO is defined (val is %ld)\n", (long)_POSIX_SYNCHRONIZED_IO+0);
+	printf("_POSIX_SYNCHRONIZED_IO is defined (val is %ld)\n", (long)_POSIX_SYNCHRONIZED_IO + 0);
 #else
 	printf("_POSIX_SYNCHRONIZED_IO is undefined\n");
 #endif
@@ -318,7 +318,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_THREAD_ATTR_STACKADDR
-	printf("_POSIX_THREAD_ATTR_STACKADDR is defined (val is %ld)\n", (long)_POSIX_THREAD_ATTR_STACKADDR+0);
+	printf("_POSIX_THREAD_ATTR_STACKADDR is defined (val is %ld)\n", (long)_POSIX_THREAD_ATTR_STACKADDR + 0);
 #else
 	printf("_POSIX_THREAD_ATTR_STACKADDR is undefined\n");
 #endif
@@ -329,7 +329,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_THREAD_ATTR_STACKSIZE
-	printf("_POSIX_THREAD_ATTR_STACKSIZE is defined (val is %ld)\n", (long)_POSIX_THREAD_ATTR_STACKSIZE+0);
+	printf("_POSIX_THREAD_ATTR_STACKSIZE is defined (val is %ld)\n", (long)_POSIX_THREAD_ATTR_STACKSIZE + 0);
 #else
 	printf("_POSIX_THREAD_ATTR_STACKSIZE is undefined\n");
 #endif
@@ -340,7 +340,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_THREAD_ATTR_CPUTIME
-	printf("_POSIX_THREAD_ATTR_CPUTIME is defined (val is %ld)\n", (long)_POSIX_THREAD_ATTR_CPUTIME+0);
+	printf("_POSIX_THREAD_ATTR_CPUTIME is defined (val is %ld)\n", (long)_POSIX_THREAD_ATTR_CPUTIME + 0);
 #else
 	printf("_POSIX_THREAD_ATTR_CPUTIME is undefined\n");
 #endif
@@ -351,7 +351,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_THREAD_PRIO_INHERIT
-	printf("_POSIX_THREAD_PRIO_INHERIT is defined (val is %ld)\n", (long)_POSIX_THREAD_PRIO_INHERIT+0);
+	printf("_POSIX_THREAD_PRIO_INHERIT is defined (val is %ld)\n", (long)_POSIX_THREAD_PRIO_INHERIT + 0);
 #else
 	printf("_POSIX_THREAD_PRIO_INHERIT is undefined\n");
 #endif
@@ -362,7 +362,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_THREAD_PRIORITY_SCHEDULING
-	printf("_POSIX_THREAD_PRIORITY_SCHEDULING is defined (val is %ld)\n", (long)_POSIX_THREAD_PRIORITY_SCHEDULING+0);
+	printf("_POSIX_THREAD_PRIORITY_SCHEDULING is defined (val is %ld)\n", (long)_POSIX_THREAD_PRIORITY_SCHEDULING + 0);
 #else
 	printf("_POSIX_THREAD_PRIORITY_SCHEDULING is undefined\n");
 #endif
@@ -373,7 +373,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_THREAD_PROCESS_SHARED
-	printf("_POSIX_THREAD_PROCESS_SHARED is defined (val is %ld)\n", (long)_POSIX_THREAD_PROCESS_SHARED+0);
+	printf("_POSIX_THREAD_PROCESS_SHARED is defined (val is %ld)\n", (long)_POSIX_THREAD_PROCESS_SHARED + 0);
 #else
 	printf("_POSIX_THREAD_PROCESS_SHARED is undefined\n");
 #endif
@@ -384,7 +384,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_THREAD_ROBUST_PRIO_INHERIT
-	printf("_POSIX_THREAD_ROBUST_PRIO_INHERIT is defined (val is %ld)\n", (long)_POSIX_THREAD_ROBUST_PRIO_INHERIT+0);
+	printf("_POSIX_THREAD_ROBUST_PRIO_INHERIT is defined (val is %ld)\n", (long)_POSIX_THREAD_ROBUST_PRIO_INHERIT + 0);
 #else
 	printf("_POSIX_THREAD_ROBUST_PRIO_INHERIT is undefined\n");
 #endif
@@ -395,7 +395,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_THREAD_ROBUST_PRIO_PROTECT
-	printf("_POSIX_THREAD_ROBUST_PRIO_PROTECT is defined (val is %ld)\n", (long)_POSIX_THREAD_ROBUST_PRIO_PROTECT+0);
+	printf("_POSIX_THREAD_ROBUST_PRIO_PROTECT is defined (val is %ld)\n", (long)_POSIX_THREAD_ROBUST_PRIO_PROTECT + 0);
 #else
 	printf("_POSIX_THREAD_ROBUST_PRIO_PROTECT is undefined\n");
 #endif
@@ -406,7 +406,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_THREAD_SAFE_FUNCTIONS
-	printf("_POSIX_THREAD_SAFE_FUNCTIONS is defined (val is %ld)\n", (long)_POSIX_THREAD_SAFE_FUNCTIONS+0);
+	printf("_POSIX_THREAD_SAFE_FUNCTIONS is defined (val is %ld)\n", (long)_POSIX_THREAD_SAFE_FUNCTIONS + 0);
 #else
 	printf("_POSIX_THREAD_SAFE_FUNCTIONS is undefined\n");
 #endif
@@ -417,7 +417,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_THREAD_SPORADIC_SERVER
-	printf("_POSIX_THREAD_SPORADIC_SERVER is defined (val is %ld)\n", (long)_POSIX_THREAD_SPORADIC_SERVER+0);
+	printf("_POSIX_THREAD_SPORADIC_SERVER is defined (val is %ld)\n", (long)_POSIX_THREAD_SPORADIC_SERVER + 0);
 #else
 	printf("_POSIX_THREAD_SPORADIC_SERVER is undefined\n");
 #endif
@@ -428,7 +428,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_THREADS
-	printf("_POSIX_THREADS is defined (val is %ld)\n", (long)_POSIX_THREADS+0);
+	printf("_POSIX_THREADS is defined (val is %ld)\n", (long)_POSIX_THREADS + 0);
 #else
 	printf("_POSIX_THREADS is undefined\n");
 #endif
@@ -439,7 +439,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_TIMEOUTS
-	printf("_POSIX_TIMEOUTS is defined (val is %ld)\n", (long)_POSIX_TIMEOUTS+0);
+	printf("_POSIX_TIMEOUTS is defined (val is %ld)\n", (long)_POSIX_TIMEOUTS + 0);
 #else
 	printf("_POSIX_TIMEOUTS is undefined\n");
 #endif
@@ -450,7 +450,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_TIMERS
-	printf("_POSIX_TIMERS is defined (val is %ld)\n", (long)_POSIX_TIMERS+0);
+	printf("_POSIX_TIMERS is defined (val is %ld)\n", (long)_POSIX_TIMERS + 0);
 #else
 	printf("_POSIX_TIMERS is undefined\n");
 #endif
@@ -461,7 +461,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_TYPED_MEMORY_OBJECTS
-	printf("_POSIX_TYPED_MEMORY_OBJECTS is defined (val is %ld)\n", (long)_POSIX_TYPED_MEMORY_OBJECTS+0);
+	printf("_POSIX_TYPED_MEMORY_OBJECTS is defined (val is %ld)\n", (long)_POSIX_TYPED_MEMORY_OBJECTS + 0);
 #else
 	printf("_POSIX_TYPED_MEMORY_OBJECTS is undefined\n");
 #endif
@@ -472,7 +472,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_VERSION
-	printf("_POSIX_VERSION is defined (val is %ld)\n", (long)_POSIX_VERSION+0);
+	printf("_POSIX_VERSION is defined (val is %ld)\n", (long)_POSIX_VERSION + 0);
 #else
 	printf("_POSIX_VERSION is undefined\n");
 #endif
@@ -483,7 +483,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _XOPEN_CRYPT
-	printf("_XOPEN_CRYPT is defined (val is %ld)\n", (long)_XOPEN_CRYPT+0);
+	printf("_XOPEN_CRYPT is defined (val is %ld)\n", (long)_XOPEN_CRYPT + 0);
 #else
 	printf("_XOPEN_CRYPT is undefined\n");
 #endif
@@ -494,7 +494,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _XOPEN_ENH_I18N
-	printf("_XOPEN_ENH_I18N is defined (val is %ld)\n", (long)_XOPEN_ENH_I18N+0);
+	printf("_XOPEN_ENH_I18N is defined (val is %ld)\n", (long)_XOPEN_ENH_I18N + 0);
 #else
 	printf("_XOPEN_ENH_I18N is undefined\n");
 #endif
@@ -505,7 +505,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _XOPEN_REALTIME
-	printf("_XOPEN_REALTIME is defined (val is %ld)\n", (long)_XOPEN_REALTIME+0);
+	printf("_XOPEN_REALTIME is defined (val is %ld)\n", (long)_XOPEN_REALTIME + 0);
 #else
 	printf("_XOPEN_REALTIME is undefined\n");
 #endif
@@ -516,7 +516,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _XOPEN_REALTIME_THREADS
-	printf("_XOPEN_REALTIME_THREADS is defined (val is %ld)\n", (long)_XOPEN_REALTIME_THREADS+0);
+	printf("_XOPEN_REALTIME_THREADS is defined (val is %ld)\n", (long)_XOPEN_REALTIME_THREADS + 0);
 #else
 	printf("_XOPEN_REALTIME_THREADS is undefined\n");
 #endif
@@ -527,7 +527,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _XOPEN_SHM
-	printf("_XOPEN_SHM is defined (val is %ld)\n", (long)_XOPEN_SHM+0);
+	printf("_XOPEN_SHM is defined (val is %ld)\n", (long)_XOPEN_SHM + 0);
 #else
 	printf("_XOPEN_SHM is undefined\n");
 #endif
@@ -538,7 +538,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _XOPEN_UNIX
-	printf("_XOPEN_UNIX is defined (val is %ld)\n", (long)_XOPEN_UNIX+0);
+	printf("_XOPEN_UNIX is defined (val is %ld)\n", (long)_XOPEN_UNIX + 0);
 #else
 	printf("_XOPEN_UNIX is undefined\n");
 #endif
@@ -549,7 +549,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _XOPEN_UUCP
-	printf("_XOPEN_UUCP is defined (val is %ld)\n", (long)_XOPEN_UUCP+0);
+	printf("_XOPEN_UUCP is defined (val is %ld)\n", (long)_XOPEN_UUCP + 0);
 #else
 	printf("_XOPEN_UUCP is undefined\n");
 #endif
@@ -560,7 +560,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _XOPEN_VERSION
-	printf("_XOPEN_VERSION is defined (val is %ld)\n", (long)_XOPEN_VERSION+0);
+	printf("_XOPEN_VERSION is defined (val is %ld)\n", (long)_XOPEN_VERSION + 0);
 #else
 	printf("_XOPEN_VERSION is undefined\n");
 #endif
@@ -571,7 +571,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_CHOWN_RESTRICTED
-	printf("_POSIX_CHOWN_RESTRICTED is defined (val is %ld)\n", (long)_POSIX_CHOWN_RESTRICTED+0);
+	printf("_POSIX_CHOWN_RESTRICTED is defined (val is %ld)\n", (long)_POSIX_CHOWN_RESTRICTED + 0);
 #else
 	printf("_POSIX_CHOWN_RESTRICTED is undefined\n");
 #endif
@@ -582,7 +582,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_NO_TRUNC
-	printf("_POSIX_NO_TRUNC is defined (val is %ld)\n", (long)_POSIX_NO_TRUNC+0);
+	printf("_POSIX_NO_TRUNC is defined (val is %ld)\n", (long)_POSIX_NO_TRUNC + 0);
 #else
 	printf("_POSIX_NO_TRUNC is undefined\n");
 #endif
@@ -593,7 +593,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_VDISABLE
-	printf("_POSIX_VDISABLE is defined (val is %ld)\n", (long)_POSIX_VDISABLE+0);
+	printf("_POSIX_VDISABLE is defined (val is %ld)\n", (long)_POSIX_VDISABLE + 0);
 #else
 	printf("_POSIX_VDISABLE is undefined\n");
 #endif
@@ -604,7 +604,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_ASYNC_IO
-	printf("_POSIX_ASYNC_IO is defined (val is %ld)\n", (long)_POSIX_ASYNC_IO+0);
+	printf("_POSIX_ASYNC_IO is defined (val is %ld)\n", (long)_POSIX_ASYNC_IO + 0);
 #else
 	printf("_POSIX_ASYNC_IO is undefined\n");
 #endif
@@ -615,7 +615,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_PRIO_IO
-	printf("_POSIX_PRIO_IO is defined (val is %ld)\n", (long)_POSIX_PRIO_IO+0);
+	printf("_POSIX_PRIO_IO is defined (val is %ld)\n", (long)_POSIX_PRIO_IO + 0);
 #else
 	printf("_POSIX_PRIO_IO is undefined\n");
 #endif
@@ -626,7 +626,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX_SYNC_IO
-	printf("_POSIX_SYNC_IO is defined (val is %ld)\n", (long)_POSIX_SYNC_IO+0);
+	printf("_POSIX_SYNC_IO is defined (val is %ld)\n", (long)_POSIX_SYNC_IO + 0);
 #else
 	printf("_POSIX_SYNC_IO is undefined\n");
 #endif
@@ -637,7 +637,7 @@ int main(int argc, char *argv[])
 #endif
 	printf("\n");
 #ifdef _POSIX2_SYMLINKS
-	printf("_POSIX2_SYMLINKS is defined (val is %ld)\n", (long)_POSIX2_SYMLINKS+0);
+	printf("_POSIX2_SYMLINKS is defined (val is %ld)\n", (long)_POSIX2_SYMLINKS + 0);
 #else
 	printf("_POSIX2_SYMLINKS is undefined\n");
 #endif

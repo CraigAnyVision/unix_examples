@@ -4,23 +4,23 @@
 
 #include "path_alloc.h"
 
-int main (void)
+int main(void)
 {
-    char *ptr;
-    size_t size;
+	char *ptr;
+	size_t size;
 
-    if (chdir("/proc/thread-self/fd") < 0)
-    {
-        fprintf(stderr, "chdir failed\n");
-        exit(EXIT_FAILURE);
-    }
+	if (chdir("/proc/thread-self/fd") < 0)
+	{
+		fprintf(stderr, "chdir failed\n");
+		exit(EXIT_FAILURE);
+	}
 
-    ptr = path_alloc(&size);
+	ptr = path_alloc(&size);
 
-    if (getcwd(ptr, size) == NULL)
-    {
-        fprintf(stderr, "getcwd failed\n");
-    }
+	if (getcwd(ptr, size) == NULL)
+	{
+		fprintf(stderr, "getcwd failed\n");
+	}
 
-    printf("cwd = %s\n", ptr);
+	printf("cwd = %s\n", ptr);
 }
