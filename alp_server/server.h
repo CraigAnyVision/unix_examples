@@ -6,9 +6,9 @@
 
 /**
  * Symbols defined in common.c.
-**/
+ **/
 extern const char *program_name;
-extern int verbose; // If nonzero, print verbose messages
+extern int verbose;  // If nonzero, print verbose messages
 
 // Like malloc, except aborts the program if allocation fails
 extern void *xmalloc(size_t size);
@@ -34,18 +34,19 @@ extern char *get_self_executable_directory();
 
 /**
  * Symbols defined in module.c
-**/
+ **/
 
 // An instance of a loaded server module
-struct server_module {
-    // The shared library handle corresponding to the loaded module
-    void *handle;
+struct server_module
+{
+	// The shared library handle corresponding to the loaded module
+	void *handle;
 
-    // A name describing the module
-    const char *name;
+	// A name describing the module
+	const char *name;
 
-    // The function that generates the HTML results for this module
-    void (*generate_function)(int);
+	// The function that generates the HTML results for this module
+	void (*generate_function)(int);
 };
 
 // The directory from which modules are loaded
@@ -61,8 +62,8 @@ extern void module_close(struct server_module *module);
 
 /**
  * Symbols defined in server.c.
-**/
+ **/
 // Run the server on LOCAL_ADDRESS and PORT
 extern void server_run(struct in_addr local_address, uint16_t port);
 
-#endif // SERVER_H
+#endif  // SERVER_H

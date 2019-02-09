@@ -1,6 +1,6 @@
 #include <dlfcn.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "server.h"
@@ -9,53 +9,54 @@ char *module_dir;
 
 struct server_module *module_open(const char *module_name)
 {
-    struct server_module *module;
+	struct server_module *module;
 
-    // Construct the full path of the module shared library we'll try to load
-    char *module_path = (char *) xmalloc(strlen(module_dir) + strlen(module_name) + 2);
-    sprintf(module_path, "%s/%s", module_dir, module_name);
+	// Construct the full path of the module shared library we'll try to load
+	char *module_path = (char *)xmalloc(strlen(module_dir) + strlen(module_name) + 2);
+	sprintf(module_path, "%s/%s", module_dir, module_name);
 
-    // Attempt to open MODULE_PATH as a shared library
-    void *handle = dlopen(module_path, RTLD_NOW);
-    free(module_path);
-    if (handle == NULL)
-    {
-        // either this path doesn't exist or it isn't a shared library
-        return NULL;
-    }
+	// Attempt to open MODULE_PATH as a shared library
+	void *handle = dlopen(module_path, RTLD_NOW);
+	free(module_path);
+	if (handle == NULL)
+	{
+		// either this path doesn't exist or it isn't a shared library
+		return NULL;
+	}
 
-    // Each module is a shared library file that must define and export a function named module_generate.
-    // This function generates an HTML Web page and writes it to the client socket file descriptor
-    // passed as its argument.
-    void (*module_generate)(int);
+	// Each module is a shared library file that must define and export a function named module_generate.
+	// This function generates an HTML Web page and writes it to the client socket file descriptor
+	// passed as its argument.
+	void (*module_generate)(int);
 
-    // Resolve the module_generate symbol from the shared library
-    module_generate = (void (*)(int)) dlsym(handle, "module_generate");
+	// Resolve the module_generate symbol from the shared library
+	module_generate = (void (*)(int))dlsym(handle, "module_generate");
 
-    // Make sure the symbol was found
-    if (module_generate == NULL)
-    {
-        // The symbol is missing. While this is a shared library, it
-        // probably isn't a server module. Close up and indicate failure
-        dlclose(handle);
-        return NULL;
-    }
+	// Make sure the symbol was found
+	if (module_generate == NULL)
+	{
+		// The symbol is missing. While this is a shared library, it
+		// probably isn't a server module. Close up and indicate failure
+		dlclose(handle);
+		return NULL;
+	}
 
-    // Allocate and initialize a server_module object
-    module = (struct server_module *) xmalloc(sizeof(struct server_module));
-    module->handle = handle;
-    module->name = xstrdup(module_name);
-    module->generate_function = module_generate;
+	// Allocate and initialize a server_module object
+	module = (struct server_module *)xmalloc(sizeof(struct server_module));
+	module->handle = handle;
+	module->name = xstrdup(module_name);
+	module->generate_function = module_generate;
 
-    // Return it, indicating success
-    return module;
+	// Return it, indicating success
+	return module;
 }
 
-void module_close(struct server_module *module) {
-    /* Close the shared library. */
-    dlclose(module->handle);
-    /* Deallocate the module name. */
-    free((char *) module->name);
-    /* Deallocate the module object. */
-    free(module);
+void module_close(struct server_module *module)
+{
+	/* Close the shared library. */
+	dlclose(module->handle);
+	/* Deallocate the module name. */
+	free((char *)module->name);
+	/* Deallocate the module object. */
+	free(module);
 }
